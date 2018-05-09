@@ -46,15 +46,15 @@ xorSocket.on('offlinePhaseCompleted', ans => console.log(`offline: ${ans.timings
 #### Connection
 | Event Name | Query JSON | Callback Answer JSON | Description | 
 |---|---|---|---|
-| createAndJoinNewUcid | {} | {} | |
-| joinExistingUcid | {} | {} | |
-| leaveUcid | {} | {} | |
+| createAndJoinNewUcid | `{ netconfigId }` | `{ ucid }` | joins a given netconfig and receives a new computation id `ucid`  |
+| joinExistingUcid | `{ ucid }` | `{ state }` | joins an existing `ucid` and retrieves the state for this computation |
+| leaveUcid | `{ ucid }` | `{}` | leaves an existing `ucid` |
 #### Data Discovery
 | Event Name | Query JSON | Callback Answer JSON | Description | 
 |---|---|---|---|
-| listAvailableNetconfigs | {} | {} | |
-| listPrivateDatasets | {} | {} | |
-| listAnalystDatasets | {} | {} | |
+| listAvailableNetconfigs | `{}` | `{netconfig1, netconfig2, ...}` | lists all available netconfigs. Each `netconfig` object contains a `numplayers` and `netconfigId` field |
+| listPrivateDatasets | `{ netconfigId }` | `{answer: [ds1, ds2, ...]}` | lists all available private datasets. Each dataset `ds` object contains an `ownerId` and `name` field |
+| listAnalystDatasets | `{ ucid }` | `{answer: [ds1, ds2, ...]}` | lists all available datasets uploaded by the analyst. Each `ds` object is a string containing the name of the dataset |
 | listHeaders | {} | {} | |
 | listAnalystHeaders | {} | {} | |
 #### Upload Analyst Data
