@@ -272,3 +272,9 @@ https.get(`${xorBaseUrl}/result/${ucid}`, (resp) => {
 ```
 
 the same can be done with the audit archive
+
+# Sample Implementation (minimal)
+A [sample implementation](example.js) using the apis is provided in this repo. It uses these [algorithm parameters](params/radar.json).
+
+# Demo environment
+To get access to a demo environment contact [us](info@inpher.io).

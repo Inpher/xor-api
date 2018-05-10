@@ -1,0 +1,30 @@
+{
+  "netconfigId":"demo",
+  "algorithm": {
+      "type":"LINREG",
+      "compileParams": {
+          "N":100002,
+          "k":8
+      },
+      "sources": { 
+          "a": {
+              "stype":"private",
+              "ownerId":0,
+              "rows":50001,
+              "cols":9,
+              "name":"radar_a"
+          },
+          "b": {
+              "stype":"private",
+              "ownerId":1,
+              "rows":50001,
+              "cols":9,
+              "name":"radar_b"
+          }
+      },
+      "input":{
+           "X":"a(1-8);b(1-8)",
+           "y":"a(9);b(9)"
+      }
+  }
+}

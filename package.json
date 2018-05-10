@@ -1,0 +1,12 @@
+{
+  "name": "xor-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node example.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^2.0.4",
+    "socket.io-stream": "^0.9.1"
+  }
+}
