@@ -2,9 +2,11 @@
 XOR API (alpha) and Examples
 
 # Introduction
-The purpose of this document is to show you how to interact programmatically with the xor API.
+The purpose of this document is to show you how to interact programmatically with the [xor](https://dev.inpher.io/xor).
 
 # Requirements
+A basic understanding of [XOR](https://dev.inpher.io/xor) and it's components is strongly recommendet before starting with this documenation.
+
 The API is based on [socket.io's](https://socket.io) implementaion of websockets. To install `socket.io`, run the following command in your project:
 
 ```bash
