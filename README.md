@@ -1,5 +1,5 @@
 # xor-api
-XOR API (alpha) and Examples
+XOR API (beta) and Examples
 
 # Introduction
 The purpose of this document is to show you how to interact programmatically with the [xor](https://dev.inpher.io/xor).
