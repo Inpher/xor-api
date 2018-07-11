@@ -51,9 +51,7 @@ When creating a new computation, the algorithm parameters are sent to xor when c
    "ucid":"4e7e2f65-701b-89a7-274a-b30c27c06fdd",
    "algorithm":{  
       "type": "LINREG",
-      "compileParams":{  
-         "N":60000,
-         "k":9,
+      "compileParams":{
          "audit":false
       },
       "sources":{  
@@ -84,8 +82,6 @@ When creating a new computation, the algorithm parameters are sent to xor when c
 | Field | Possible Values | Description |
 | --- | --- | --- |
 | `algorithm.type` | string | function that shall be run on the data |
-| `compileParams.N` | integer | total number of rows (samples) to be used across all datasets |
-| `compileParams.k` | integer | total number of columns (features and labels) to be used across all datasets |
 | `compileParams.audit` | boolean | an audit archive containing all triplets, shares, network traces will be collected and created during the computation. this feature is not available in a production environment! |
 | `sources[id].stype` | private, public, secretshared | type of dataset. `private` means the data resides in the private data folder of the xor machine. `public` means a publicly known value. `secretshared` means a dataset uploaded to the portal and secret shared with the xor machines |
 | `sources[id].name` | string | name of the dataset *without* file extension |
@@ -99,18 +95,18 @@ When creating a new computation, the algorithm parameters are sent to xor when c
 
 The available algorithms are the following ([more details](https://dev.inpher.io/xor)):
 
-| algorithm.type | Description |
-| --- | --- |
-| MATRIXCOLUMNSUM | column-wise sum |
-| CORRELATION | column-wise correlation |
-| MEAN | column-wise mean |
-| VARIANCE | column-wise variance |
-| LINREG | linear regression |
-| LOGREG | logistic regression |
-| BATCHLOGREG | (alpha) logistic regression using batch gradient descent for large datasets |
-| REGRESSIONPREDICT | dot product between `thetas` and test matrix |
-| RSS | residual sum of squares |
-| PSI | private set intersection |
+| algorithm.type | Description | mandatory compileParams |
+| --- | --- | --- |
+| MATRIXCOLUMNSUM | column-wise sum | |
+| CORRELATION | column-wise correlation | |
+| MEAN | column-wise mean | | 
+| VARIANCE | column-wise variance | | 
+| LINREG | linear regression | |
+| LOGREG | logistic regression | `irlsIters` (iterations) |
+| BATCHLOGREG | (alpha) logistic regression using batch gradient descent for large datasets | `batchSize`, `epochs` |
+| REGRESSIONPREDICT | dot product between `thetas` and test matrix | |
+| RSS | residual sum of squares | | 
+| PSI | private set intersection | `psiBound` | 
 
 The composition of the input (algorithm.input) follows the following syntax:
 
