@@ -73,8 +73,8 @@ Party two will run the following code locally:
 ```
 python3 grangerPreprocessing.py \
   --input 'daily-rainfall-in-melbourne-aust.csv' \
-  --lag-lower 1 \
-  --lag-upper 5 \
+  --lag-min 1 \
+  --lag-max 5 \
   --output 'x.csv'
 ```
 
