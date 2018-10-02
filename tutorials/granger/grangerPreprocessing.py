@@ -30,4 +30,4 @@ for t in reversed(range(lag_max, lenTimeSeries)):
 
 # writing file
 header = np.array([ 'h' + str(i) for i in range(0, lag_max + 1)])
-np.savetxt(args['output'], out, fmt='%.9f', delimiter=',', header=','.join(header))
+np.savetxt(args['output'], out, fmt='%.9f', delimiter=',', comments='', header=','.join(header))
