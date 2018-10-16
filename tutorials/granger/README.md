@@ -43,6 +43,8 @@ optional arguments:
 
 ## Example computation with XOR
 
+> NOTE: The Jupyter notebook `granger.ipynb` contains the whole example, including plaintext calculations and theoretical explanations for your convenience.
+
 For this example we will take two datasets:
 * [The daily minimum temperatures in Melbourne (1981-1990)](http://bit.ly/2pIBicE)
 * [The daily rainfall in Melbourne (1981-1990)](http://bit.ly/2McV1cp)
@@ -73,8 +75,8 @@ Party two will run the following code locally:
 ```
 python3 grangerPreprocessing.py \
   --input 'daily-rainfall-in-melbourne-aust.csv' \
-  --lag-lower 1 \
-  --lag-upper 5 \
+  --lag-min 1 \
+  --lag-max 5 \
   --output 'x.csv'
 ```
 
